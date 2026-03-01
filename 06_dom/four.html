@@ -13,8 +13,38 @@
 </body>
 <script>
 function addlanguage(langname){
-    document.createElement('li')
+    const li = document.createElement('li')
+    li.innerHTML = langname
+    document.querySelector('.language').appendChild(li)
 }
+addlanguage('python')
+addlanguage('java')
+
+function addoptilanguage(langname){
+    const li = document.createElement('li')
+    li.appendChild(document.createTextNode(langname))
+    document.querySelector('.language').appendChild(li)
+}
+addoptilanguage('c++')
+
+// edit
+// const secondlanguage = document.querySelector(' li:nth-child(2)')
+// secondlanguage.innerHTML = 'mojo'
+// const newli = document.createElement('li')
+// newli.textContent = 'rust'
+// secondlanguage.replaceWith(newli)
+
+
+// edit
+const secondlanguage = document.querySelector(' li:nth-child(1)')
+secondlanguage.outerHTML = '<li>golang</li>'
+
+
+// remove
+
+const firstlangunge = document.querySelector('li:nth-child(3)')
+firstlangunge.remove()
+
 
 </script>
 </html>
